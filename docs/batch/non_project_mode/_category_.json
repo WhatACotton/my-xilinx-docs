@@ -1,6 +1,6 @@
 {
   "label": "Non Project Mode",
-  "position": 1,
+  "position": 3,
   "link": {
     "type": "generated-index",
     "description": "Vivado をBatch Modeで動かしてみる"
