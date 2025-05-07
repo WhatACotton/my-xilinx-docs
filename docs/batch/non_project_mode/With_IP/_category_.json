@@ -1,0 +1,8 @@
+{
+  "label": "With IP",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "IPを使ったプロジェクトをBatch Modeで動かしてみる"
+  }
+}
