@@ -10,7 +10,7 @@ Minimal なサンプルプロジェクトを通じて non Project Mode につい
 
 **[tcl_example - whatacotton](https://github.com/WhatACotton/tcl_example)**
 
-このリポジトリは L チカを行うプロジェクトです。そのまま実行すると Zybo Z7-20 のボードで動かせるビットストリームが生成されます。
+このリポジトリは L チカを行うプロジェクトです。そのまま実行すると Zybo Z7-20 のボードで動かせる bitstream が生成されます。
 
 ## ファイル構成
 
