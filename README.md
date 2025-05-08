@@ -1,3 +1,3 @@
 # My Xilinx Docs
 
-Vivado as CLI のリポジトリです。
+Vivado in CLI のリポジトリです。

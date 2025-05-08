@@ -44,7 +44,7 @@ INFO: [Device 21-403] Loading part xc7z020clg400-1
 
 openFPGALoader を用いた書き込みについてはこちらの記事を参考にしてください。
 
-[出先で bitstream を書き込む方法 - Vivado as CLI](/blog/write_bitstream)
+[出先で bitstream を書き込む方法 - Vivado in CLI](/blog/write_bitstream)
 
 ## `flow.tcl`の解説
 
