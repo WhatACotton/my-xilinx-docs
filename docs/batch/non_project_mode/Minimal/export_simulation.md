@@ -2,13 +2,13 @@
 sidebar_position: 1
 ---
 
-# Simulation
+# シミュレーションのエクスポート
 
 Minimal なサンプルプロジェクトを通じて non Project Mode についての感覚をつかみます。
 
 今回のチュートリアルでは以下のリポジトリを使用します。
 
-**[tcl_example - whatacotton](https://github.com/WhatACotton/tcl_example)**
+**[vivado_tcl_minimal_example - whatacotton](https://github.com/WhatACotton/vivado_tcl_minimal_example)**
 
 このリポジトリは L チカを行うプロジェクトです。そのまま実行すると Zybo Z7-20 のボードで動かせる bitstream が生成されます。
 

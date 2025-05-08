@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Overview
+# 概要
 
 ここでは Vivado を non Project Mode で実行するための解説をします。
 

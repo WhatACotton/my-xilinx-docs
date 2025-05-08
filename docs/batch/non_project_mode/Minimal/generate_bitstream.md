@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Genarate bitstream
+# bitstream の生成
 
 ## `flow.tcl`の実行
 

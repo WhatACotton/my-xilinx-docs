@@ -1,8 +1,0 @@
-{
-  "label": "With Original IP",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "独自IPモジュールを使用したBlock DesignをBatch Modeで動かしてみる"
-  }
-}

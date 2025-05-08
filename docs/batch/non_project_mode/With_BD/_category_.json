@@ -1,8 +1,0 @@
-{
-  "label": "With BD",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Block Designを使ったプロジェクトをBatch Modeで動かしてみる"
-  }
-}
