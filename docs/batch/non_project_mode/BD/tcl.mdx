@@ -111,9 +111,9 @@ set obj [current_project]
 set_property -name "board_part_repo_paths" -value "[file normalize [file join $env(HOME) ".Xilinx/Vivado/2022.2/xhub/board_store/xilinx_board_store"]]" -objects $obj
 ```
 
-ボードの指定を行います。今回は Digilent の Zybo Z7-20 を使用します。また、ボードの指定が必要なときは、引数に Object で Project を指定する必要があります。
+ここでは BSP が保存されているディレクトリを読み込むための設定を行なっています。BSP とは Board Support Package の略で、ボードに必要な情報をまとめたものです。これを読み込むことで、ボードの情報を取得することができます。
 
-ここで必要になってくるのは`create_project -in_memory`です。直感的ではないですが、non Project Mode でボードを指定するためには、Project を作成する必要があります。`-in_memory`を指定することで、プロジェクトを作成しつつ、ファイルを保存しないようにしています。
+ここで必要になってくるのが`create_project -in_memory`です。直感的ではないですが、non Project Mode でボードを指定するためには、Project を作成する必要があります。`-in_memory`を指定することで、プロジェクトを作成しつつ、ファイルを保存しないようにしています。
 
 ### Block Design の読み込み
 
@@ -357,3 +357,6 @@ $ tree . -a -I .git
 ## 参考
 
 - [block-design-in-nonproject-mode](https://adaptivesupport.amd.com/s/question/0D52E00006iHs1mSAC/block-design-in-nonproject-mode?language=en_US)
+- [Silicon Labs EFM32：BSP とは何ですか？ - 半導体事業 - マクニカ](https://www.macnica.co.jp/business/semiconductor/support/faqs/silicon_labs/112081/)
+- [Vivado のプロジェクトを git で管理するための最小限のファイル構成 #FPGA - Qiita](https://qiita.com/nahitafu/items/b8bfee046b197c0fb833)
+- [Vivado でプロジェクトのエクスポートを極める #FPGA - Qiita](https://qiita.com/nahitafu/items/de4b295ea60ce6173a83)
