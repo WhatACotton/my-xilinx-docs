@@ -8,7 +8,16 @@ Block Design を用いたプロジェクトについて解説します。
 
 今回は Zynq プロセッサを用いた Block Design を作成し、Vitis でプロジェクトを作成するために必要な`.xsa`ファイルの出力まで行います。
 
-この章で扱う Block Design は外部 IP を使用しないため、特段ファイルを読み込む必要がありません。独自 IP を用いたプロジェクトについては次のセクションにて説明します。
+この章で扱う Block Design は外部 IP を使用しないため、特段ファイルを読み込む必要がありません。独自 IP を用いたプロジェクトについては次の章にて説明します。
+
+今回のチュートリアルでは以下のリポジトリを使用します。
+
+[vivado_tcl_simple_bd - whatacotton](https://github.com/WhatACotton/vivado_tcl_simple_bd)
+
+このプロジェクトは Vitis で L チカすることができるプロジェクトです。Zynq プロセッサを用いているため、Vitis で 自由に LED を制御することができます。
+
+正常に実行されると以下の様な Block Design が生成されます。
+![](./img/5.png)
 
 ## ファイル構成
 
@@ -93,6 +102,19 @@ write_hw_platform -fixed -include_bit -force -file ./dist/$top_module_name.xsa
 </p>
 </details>
 
+### ボードの指定
+
+```tcl
+set current_dir [pwd]
+create_project -in_memory
+set obj [current_project]
+set_property -name "board_part_repo_paths" -value "[file normalize [file join $env(HOME) ".Xilinx/Vivado/2022.2/xhub/board_store/xilinx_board_store"]]" -objects $obj
+```
+
+ボードの指定を行います。今回は Digilent の Zybo Z7-20 を使用します。また、ボードの指定が必要なときは、引数に Object で Project を指定する必要があります。
+
+ここで必要になってくるのは`create_project -in_memory`です。直感的ではないですが、non Project Mode でボードを指定するためには、Project を作成する必要があります。`-in_memory`を指定することで、プロジェクトを作成しつつ、ファイルを保存しないようにしています。
+
 ### Block Design の読み込み
 
 ```tcl
@@ -115,7 +137,7 @@ write_bitstream -force $outputDir/$top_module_name.bit
 write_hw_platform -fixed -include_bit -force -file ./dist/$top_module_name.xsa
 ```
 
-### 生成されるファイル群
+## 生成されるファイル群
 
 <details>
 <summary>出力結果</summary>
@@ -332,8 +354,6 @@ $ tree . -a -I .git
 </p>
 </details>
 
-:::tip
-Block Design を編集したい場合は、Block Design の tcl をそのまま読み込むだけで Block Design エディタが起動します。(ただし独自モジュールなどを読み込む場合は前処理が必要です。)
+## 参考
 
-なので一度 Block Design を作ってしまったあとはそのままそのプロジェクトを削除しても構いません。
-:::
+- [block-design-in-nonproject-mode](https://adaptivesupport.amd.com/s/question/0D52E00006iHs1mSAC/block-design-in-nonproject-mode?language=en_US)
