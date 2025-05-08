@@ -35,7 +35,7 @@ Windows の場合は bat ファイルを実行することで起動するみた�
 
 ![Create Project](./img/create_project.png)
 
-vivado を起動してから、Create Project で Project を作成
+vivado を起動してから、Create Project で Project を作成。
 
 ![write tcl](./img/write_tcl.png)
 
@@ -65,11 +65,34 @@ $ tree .
 
 ## tcl スクリプトの実行
 
-ではスクリプトを実行してみましょう。スクリプトを実行する際、元々あるプロジェクトのディレクトリがあるとエラーを出力するため、一度**プロジェクトフォルダを削除しましょう**。
+ではスクリプトを実行してみましょう。スクリプトを実行する際、元々あるプロジェクトファイルがあるとエラーを出力するため、一度**プロジェクトフォルダを削除しましょう**。
 
-削除前のディレクトリ構造は以下のとおりです。
+<details>
+<summary>エラー出力例</summary>
+<p>
 
-プロジェクトのディレクトリの一つ上に移動した上で以下を実行してください。
+```sh
+$ vivado -mode batch -source project_1.tcl
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source project_1.tcl
+# proc checkRequiredFiles { origin_dir} {
+...
+# create_project ${_xil_proj_name_} ./${_xil_proj_name_} -part xc7z020clg400-1
+ERROR: [Common 17-53] User Exception: Project already exists on disk, please use '-force' option to overwrite:
+     /home/cotton/Documents/wiki/project_1/project_1.xpr
+     /home/cotton/Documents/wiki/project_1/project_1.cache
+     /home/cotton/Documents/wiki/project_1/project_1.hw
+     /home/cotton/Documents/wiki/project_1/project_1.ip_user_files
+INFO: [Common 17-206] Exiting Vivado at Thu May  8 12:54:16 2025...
+```
+
+</p>
+</details>
 
 Linux の場合
 

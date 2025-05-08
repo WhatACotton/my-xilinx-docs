@@ -40,12 +40,20 @@ INFO: [Device 21-403] Loading part xc7z020clg400-1
 
 これが bitstream ファイルで、これを FPGA に書き込むことができ、目的の動作をさせることができるのです。
 
-ちなみに bitstream の書き込みは[openFPGALoader](https://github.com/trabucayre/openFPGALoader)というものを使うことによって、基本的に OS 問わず書き込むことができます。ここは EDA ツールが必要ないので、出先の環境でも USB などで接続さえできれば書き込みが可能です。
+ちなみに bitstream の書き込みは[openFPGALoader](https://github.com/trabucayre/openFPGALoader)というものを使うことによって、MacOS、Linux、Windows で書き込むことができます。このアプリケーションは EDA ツールを必要としないため、出先の環境でも USB などで接続さえできれば書き込みが可能です。私は普段 Linux の開発機に SSH して開発していますが、MacBook から FPGA に書き込みをしています。
+
+openFPGALoader を用いた書き込みについてはこちらの記事を参考にしてください。
+
+[出先で bitstream を書き込む方法 - Vivado as CLI](/blog/write_bitstream)
 
 ## `flow.tcl`の解説
 
+ここでは`flow.tcl`の解説をしていきます。
+
+### 初期設定
+
 ```tcl
-# 変数定義 ここではtop_module_nameを"top"に指定している。
+# 変数定義 ここではtop_module_nameを"top"に指定している。(setはtclの組み込み関数)
 set top_module_name top
 # 結果の出力先ファイルの指定
 set outputDir ./synth_tmp
@@ -55,13 +63,22 @@ file mkdir $outputDir
 set_property top $top_module_name [current_fileset]
 # 使用するchipの指定(Zybo Z7-20)
 set_part xc7z020clg400-1
+```
 
+### ソースコードの読み込み
 
+`read_verilog` は System Verilog ファイルを読み込む際、`-sv`オプションをつける必要があります。
+
+```tcl
 # ソースファイルの読み込み
 read_verilog ./src/top.v
 read_verilog ./src/tb.v
 read_xdc ./src/pin.xdc
+```
 
+### 論理合成
+
+```tcl
 # top moduleを指定し、論理合成
 synth_design -top $top_module_name
 # checkpointファイルの生成
@@ -76,8 +93,11 @@ report_power -file $outputDir/post_synth_power.rpt
 report_clock_interaction -delay_type min_max -file $outputDir/post_synth_clock_interaction.rpt
 # fanout report
 report_high_fanout_nets -fanout_greater_than 200 -max_nets 50 -file $outputDir/post_synth_high_fanout_nets.rpt
+```
 
+### 最適化・配置配線
 
+```tcl
 # 最適化を行う
 opt_design
 # 配置
@@ -88,8 +108,6 @@ phys_opt_design
 write_checkpoint -force $outputDir/post_place
 # timing summaryの生成
 report_timing_summary -file $outputDir/post_place_timing_summary.rpt
-
-
 
 # 配線
 route_design
@@ -113,15 +131,25 @@ report_drc -file $outputDir/post_imp_drc.rpt
 write_verilog -force $outputDir/top_impl_netlist.v
 # xdcファイルの生成
 write_xdc -no_fixed_only -force $outputDir/top_impl.xdc
-
-
-# bitstreamの生成
-write_bitstream -force $outputDir/$top_module_name.bit
-
 ```
 
-以上が`flow.tcl`となります。レポート類は大体テンプレートがあり、それを元に作成していますが、そのほかのファイルの読み込み、chip の指定などは基本的に状況に応じて変更しないといけません。
+ちなみに timing violation が発生した場合は、最適化処理が行われます。
+
+### bitstream の生成
+
+```tcl
+# bitstreamの生成
+write_bitstream -force $outputDir/$top_module_name.bit
+```
+
+以上が`flow.tcl`となります。レポート類は大体テンプレートがあり、それを元に作成していますが、そのほかのファイルの読み込み、chip の指定などは基本的に場合に応じて変更しないといけません。
 
 :::tip
 また、レポート類は基本的に出すようにしていますが、必要に応じて出力しないこともできます。出力するファイルの出し分けができるところも non Project Mode の利点です。
 :::
+
+### 参考
+
+- [Using-the-Non-Project-Design-Flow - AMD Technical Information Portal](https://docs.amd.com/r/2024.1-English/ug888-vivado-design-flows-overview-tutorial/Using-the-Non-Project-Design-Flow)
+
+- [vivado_non_project_example - Github](https://github.com/kdurant/vivado_non_project_example)
