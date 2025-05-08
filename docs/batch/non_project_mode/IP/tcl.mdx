@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # tcl についての解説
 
-このチュートリアルでは、Xilinx 提供のVivado内蔵の IP モジュールを使用したプロジェクトについて解説します。
+このチュートリアルでは、Xilinx 提供の Vivado 内蔵の IP モジュールを使用したプロジェクトについて解説します。
 
 今回のチュートリアルでは以下のリポジトリを使用します。
 
@@ -133,3 +133,75 @@ CRITICAL WARNING: [filemgmt 20-1440] File '/home/cotton/Documents/vivado_tcl_wit
 ```
 
 :::
+
+### 生成されるファイル群
+
+<details>
+<summary>出力結果</summary>
+<p>
+実行が完了すると以下のようなファイルが生成されます。
+
+```sh
+$ tree . -a -I .git
+.
+├── flow.tcl
+├── .gen
+│   └── sources_1
+│       └── ip
+│           └── clk_core
+│               ├── clk_core_board.xdc
+│               ├── clk_core_clk_wiz.v
+│               ├── clk_core_ooc.xdc
+│               ├── clk_core.v
+│               ├── clk_core.veo
+│               ├── clk_core.xdc
+│               ├── clk_core.xml
+│               ├── doc
+│               │   └── clk_wiz_v6_0_changelog.txt
+│               ├── mmcm_pll_drp_func_7s_mmcm.vh
+│               ├── mmcm_pll_drp_func_7s_pll.vh
+│               ├── mmcm_pll_drp_func_us_mmcm.vh
+│               ├── mmcm_pll_drp_func_us_pll.vh
+│               ├── mmcm_pll_drp_func_us_plus_mmcm.vh
+│               └── mmcm_pll_drp_func_us_plus_pll.vh
+├── .gitignore
+├── impl
+│   ├── clock_util.rpt
+│   ├── post_imp_drc.rpt
+│   ├── post_place.dcp
+│   ├── post_place_timing_summary.rpt
+│   ├── post_route.dcp
+│   ├── post_route_power.rpt
+│   ├── post_route_setup_timing_violations.rpt
+│   ├── post_route_timing_summary.rpt
+│   ├── post_route_util.rpt
+│   ├── post_synth_clock_interaction.rpt
+│   ├── post_synth.dcp
+│   ├── post_synth_high_fanout_nets.rpt
+│   ├── post_synth_power.rpt
+│   ├── post_synth_timing_summary.rpt
+│   ├── top.bit
+│   ├── top_impl_netlist.v
+│   └── top_impl.xdc
+├── README.md
+├── src
+│   ├── constr
+│   │   └── zybo.xdc
+│   ├── hdl
+│   │   ├── gen_1hz.sv
+│   │   └── top.sv
+│   └── ip
+│       └── clk_core.xci
+├── .srcs
+│   └── sources_1
+│       └── ip
+│           └── clk_core
+│               └── clk_core.xci
+└── .Xil
+    └── top_propImpl.xdc
+
+15 directories, 40 files
+```
+
+</p>
+</details>
