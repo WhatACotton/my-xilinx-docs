@@ -12,7 +12,7 @@ Block Design を用いたプロジェクトについて解説します。
 
 今回のチュートリアルでは以下のリポジトリを使用します。
 
-[vivado_tcl_simple_bd - whatacotton](https://github.com/WhatACotton/vivado_tcl_simple_bd)
+**[vivado_tcl_simple_bd - GitHub](https://github.com/WhatACotton/vivado_tcl_simple_bd)**
 
 このプロジェクトは Vitis で L チカすることができるプロジェクトです。Zynq プロセッサを用いているため、Vitis で 自由に LED を制御することができます。
 

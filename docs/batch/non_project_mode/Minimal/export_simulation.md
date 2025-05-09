@@ -8,9 +8,9 @@ Minimal なサンプルプロジェクトを通じて non Project Mode につい
 
 今回のチュートリアルでは以下のリポジトリを使用します。
 
-**[vivado_tcl_minimal_example - whatacotton](https://github.com/WhatACotton/vivado_tcl_minimal_example)**
+**[vivado_tcl_minimal_example - GitHub](https://github.com/WhatACotton/vivado_tcl_minimal_example)**
 
-このリポジトリは L チカを行うプロジェクトです。そのまま実行すると Zybo Z7-20 のボードで動かせる bitstream が生成されます。
+このリポジトリは L チカを行うプロジェクトです。そのまま実行すると Zybo Z7-20 のボードで動かせるビットストリームが生成されます。
 
 ## ファイル構成
 
@@ -37,7 +37,7 @@ $ tree .
 - `tb.v` テスト用ファイル。
 - `pin.xdc` 制約ファイル。物理ピンとコード上でのピンの接続を指定する
 
-`sim.tcl`は simulation を行うためのスクリプトで、`flow.tcl`は bitstream の生成まで行うスクリプトです。
+`sim.tcl`は simulation を行うためのスクリプトで、`flow.tcl`はビットストリームの生成まで行うスクリプトです。
 
 ## `sim.tcl` の実行
 

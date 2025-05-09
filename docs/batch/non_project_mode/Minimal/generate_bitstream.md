@@ -2,11 +2,11 @@
 sidebar_position: 2
 ---
 
-# bitstream の生成
+# ビットストリームの生成
 
 ## `flow.tcl`の実行
 
-今度は bitstream の生成まで行ってみましょう。
+今度はビットストリームの生成まで行ってみましょう。
 
 ```sh
 $ vivado -mode batch -source flow.tcl
@@ -38,13 +38,13 @@ INFO: [Device 21-403] Loading part xc7z020clg400-1
 
 うまく実行されれば、`synth_tmp`というフォルダに、`top.bit`というファイルが生成されると思います。
 
-これが bitstream ファイルでこれを FPGA に書き込むことで、目的の動作をさせることができます。
+これがビットストリームファイルでこれを FPGA に書き込むことで、目的の動作をさせることができます。
 
-ちなみに bitstream の書き込みは[openFPGALoader](https://github.com/trabucayre/openFPGALoader)というものを使うことによって、macOS、Linux、Windows で書き込むことができます。このアプリケーションは EDA ツールを必要としないため、出先の環境でも USB などで接続さえできれば書き込みが可能です。私は普段 Linux の開発機に SSH して開発していますが、MacBook から FPGA に書き込みをしています。
+ちなみにビットストリームの書き込みは[openFPGALoader](https://github.com/trabucayre/openFPGALoader)というものを使うことによって、macOS、Linux、Windows で書き込むことができます。このアプリケーションは EDA ツールを必要としないため、出先の環境でも USB などで接続さえできれば書き込みが可能です。私は普段 Linux の開発機に SSH して開発していますが、MacBook から FPGA に書き込みをしています。
 
 openFPGALoader を用いた書き込みについてはこちらの記事を参考にしてください。
 
-[出先で bitstream を書き込む方法 - Vivado in CLI](/blog/write_bitstream)
+[出先でビットストリームを書き込む方法 - Vivado in CLI](/blog/write_bitstream)
 
 ## `flow.tcl`の解説
 
@@ -135,10 +135,10 @@ write_xdc -no_fixed_only -force $outputDir/top_impl.xdc
 
 ちなみに timing violation が発生した場合は、最適化処理が行われます。
 
-### bitstream の生成
+### ビットストリームの生成
 
 ```tcl
-# bitstreamの生成
+# ビットストリームの生成
 write_bitstream -force $outputDir/$top_module_name.bit
 ```
 
@@ -148,8 +148,61 @@ write_bitstream -force $outputDir/$top_module_name.bit
 また、レポート類は基本的に出すようにしていますが、必要に応じて出力しないこともできます。出力するファイルの出し分けができるところも non Project Mode の利点です。
 :::
 
+## 生成されるファイル群
+
+実行が完了すると以下のようなファイルが生成されます。
+
+<details>
+<summary>出力結果</summary>
+<p>
+
+```sh
+$ tree . -a -I .git
+.
+├── flow.tcl
+├── .gitignore
+├── Makefile
+├── README.md
+├── sim.tcl
+├── src
+│   ├── pin.xdc
+│   ├── tb.v
+│   └── top.v
+├── synth_tmp
+│   ├── clock_util.rpt
+│   ├── post_imp_drc.rpt
+│   ├── post_place.dcp
+│   ├── post_place_timing_summary.rpt
+│   ├── post_route.dcp
+│   ├── post_route_power.rpt
+│   ├── post_route_setup_timing_violations.rpt
+│   ├── post_route_timing_summary.rpt
+│   ├── post_route_util.rpt
+│   ├── post_synth_clock_interaction.rpt
+│   ├── post_synth.dcp
+│   ├── post_synth_high_fanout_nets.rpt
+│   ├── post_synth_power.rpt
+│   ├── post_synth_timing_summary.rpt
+│   ├── top.bit
+│   ├── top_impl_netlist.v
+│   └── top_impl.xdc
+└── .Xil
+    └── top_propImpl.xdc
+
+3 directories, 26 files
+```
+
+</p>
+</details>
+
+:::tip
+`.dcp`ファイルは`write_checkpoint`を実行すると得られる中間ファイルです。この`.dcp`ファイルを処理することによってソースを秘匿しながら情報を提供することもできるみたいです。[^1]
+:::
+
 ### 参考
 
 - [Using-the-Non-Project-Design-Flow - AMD Technical Information Portal](https://docs.amd.com/r/2024.1-English/ug888-vivado-design-flows-overview-tutorial/Using-the-Non-Project-Design-Flow)
 
-- [vivado_non_project_example - Github](https://github.com/kdurant/vivado_non_project_example)
+- [vivado_non_project_example - GitHub](https://github.com/kdurant/vivado_non_project_example)
+
+[^1]: [Vivado で自作 IP コアのソースを暗号化して秘匿することのススメ #FPGA - Qiita](https://qiita.com/nahitafu/items/79bf09a73165565fef36)

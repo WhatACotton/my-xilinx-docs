@@ -8,7 +8,7 @@ sidebar_position: 1
 
 今回のチュートリアルでは以下のリポジトリを使用します。
 
-[vivado_tcl_with_xilinx_ip - whatacotton](https://github.com/WhatACotton/vivado_tcl_with_xilinx_ip)
+**[vivado_tcl_with_xilinx_ip - Github](https://github.com/WhatACotton/vivado_tcl_with_xilinx_ip)**
 
 このリポジトリも L チカを行うプロジェクトですが、今回は`clk_wizard`という Xilinx が提供する IP モジュールを用いて clock を用いた正確なクロック管理を行います。
 

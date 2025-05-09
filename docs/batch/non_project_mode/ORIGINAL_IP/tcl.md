@@ -10,7 +10,7 @@ sidebar_position: 1
 
 今回のチュートリアルでは以下のリポジトリを使用します。
 
-[vivado_tcl_bd_with_original_IP - whatacotton](https://github.com/WhatACotton/vivado_tcl_bd_with_original_IP)
+**[vivado_tcl_bd_with_original_IP - GitHub](https://github.com/WhatACotton/vivado_tcl_bd_with_original_IP)**
 
 このリポジトリでは AXI_GPIO モジュールを独自 IP に換装した Block Design を構築します。
 
