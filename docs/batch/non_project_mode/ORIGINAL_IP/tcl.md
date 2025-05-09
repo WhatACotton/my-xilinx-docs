@@ -145,10 +145,11 @@ set_property -name "ip_repo_paths" -value "./ip/myip_1_0" -objects $obj
 
 ## 生成されるファイル群
 
+実行が完了すると以下のようなファイルが生成されます。
+
 <details>
 <summary>出力結果</summary>
 <p>
-実行が完了すると以下のようなファイルが生成されます。
 
 ```sh
 $ tree . -a -I .git

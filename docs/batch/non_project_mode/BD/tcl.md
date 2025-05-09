@@ -111,7 +111,7 @@ set obj [current_project]
 set_property -name "board_part_repo_paths" -value "[file normalize [file join $env(HOME) ".Xilinx/Vivado/2022.2/xhub/board_store/xilinx_board_store"]]" -objects $obj
 ```
 
-ここでは BSP が保存されているディレクトリを読み込むための設定を行なっています。BSP とは Board Support Package の略で、ボードに必要な情報をまとめたものです。これを読み込むことで、ボードの情報を取得することができます。
+ここでは BSP が保存されているディレクトリを読み込むための設定を行っています。BSP とは Board Support Package の略で、ボードに必要な情報をまとめたものです。これを読み込むことで、ボードの情報を取得することができます。
 
 ここで必要になってくるのが`create_project -in_memory`です。直感的ではないですが、non Project Mode でボードを指定するためには、Project を作成する必要があります。`-in_memory`を指定することで、プロジェクトを作成しつつ、ファイルを保存しないようにしています。
 
@@ -139,10 +139,11 @@ write_hw_platform -fixed -include_bit -force -file ./dist/$top_module_name.xsa
 
 ## 生成されるファイル群
 
+実行が完了すると以下のようなファイルが生成されます。
+
 <details>
 <summary>出力結果</summary>
 <p>
-実行が完了すると以下のようなファイルが生成されます。
 
 ```sh
 $ tree . -a -I .git

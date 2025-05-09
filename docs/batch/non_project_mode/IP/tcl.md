@@ -16,7 +16,7 @@ sidebar_position: 1
 
 この章は前回の最小構成のプロジェクトとは異なり、IP モジュール定義ファイルである`.xci`ファイルを使用します。
 
-また、読み込んだ IP モジュールから verilog を自動生成します。
+また、読み込んだ IP モジュールから Verilog を自動生成します。
 
 ## ファイル構成
 
@@ -102,7 +102,7 @@ write_bitstream -force $outputDir/$top_module_name.bit
 import_ip ./src/ip/clk_core.xci
 upgrade_ip  -vlnv xilinx.com:ip:clk_wiz:6.0  [get_ips clk_core]
 
-# 読み込んだIPモジュールからverilogを自動生成
+# 読み込んだIPモジュールからVerilogを自動生成
 generate_target all [get_ips clk_core]  -force
 ````
 
@@ -120,10 +120,10 @@ generate_target all [get_ips clk_core]  -force
 read_verilog  [ glob .gen/sources_1/ip/clk_core/*.v ]
 ```
 
-自動生成を行うと、`.gen`ディレクトリが生成されます。その中に生成された verilog を読み込んでいます。
+自動生成を行うと、`.gen`ディレクトリが生成されます。その中に生成された Verilog を読み込んでいます。
 
 :::tip
-また、このコマンドによって verilog ファイルを読み込む際、critical warning が出ますが、これは ip から verilog を生成した際に sub-design として読み込まれるため、新しく verilog を読み込んでしまうと、sub-design として読み込まれたものと同じファイルが存在することになり、警告がでてしまうのです。
+また、このコマンドによって Verilog ファイルを読み込む際、critical warning が出ますが、これは ip から Verilog を生成した際に sub-design として読み込まれるため、新しく Verilog を読み込んでしまうと、sub-design として読み込まれたものと同じファイルが存在することになり、警告がでてしまうのです。
 
 まだこの警告に起因したエラーを引き起こしたことがないのですが、もし良い解決方法があれば教えていただきたいです。
 
@@ -136,10 +136,11 @@ CRITICAL WARNING: [filemgmt 20-1440] File '/home/cotton/Documents/vivado_tcl_wit
 
 ## 生成されるファイル群
 
+実行が完了すると以下のようなファイルが生成されます。
+
 <details>
 <summary>出力結果</summary>
 <p>
-実行が完了すると以下のようなファイルが生成されます。
 
 ```sh
 $ tree . -a -I .git

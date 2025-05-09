@@ -38,9 +38,9 @@ INFO: [Device 21-403] Loading part xc7z020clg400-1
 
 うまく実行されれば、`synth_tmp`というフォルダに、`top.bit`というファイルが生成されると思います。
 
-これが bitstream ファイルで、これを FPGA に書き込むことができ、目的の動作をさせることができるのです。
+これが bitstream ファイルでこれを FPGA に書き込むことで、目的の動作をさせることができます。
 
-ちなみに bitstream の書き込みは[openFPGALoader](https://github.com/trabucayre/openFPGALoader)というものを使うことによって、MacOS、Linux、Windows で書き込むことができます。このアプリケーションは EDA ツールを必要としないため、出先の環境でも USB などで接続さえできれば書き込みが可能です。私は普段 Linux の開発機に SSH して開発していますが、MacBook から FPGA に書き込みをしています。
+ちなみに bitstream の書き込みは[openFPGALoader](https://github.com/trabucayre/openFPGALoader)というものを使うことによって、macOS、Linux、Windows で書き込むことができます。このアプリケーションは EDA ツールを必要としないため、出先の環境でも USB などで接続さえできれば書き込みが可能です。私は普段 Linux の開発機に SSH して開発していますが、MacBook から FPGA に書き込みをしています。
 
 openFPGALoader を用いた書き込みについてはこちらの記事を参考にしてください。
 
