@@ -14,6 +14,12 @@ Vivado in CLIのLogoには、 [Apache 2.0ライセンス](https://www.apache.org
 
 software: Inkscape 1.4
 
+### `draft.drawio`
+
+設計図のファイル
+
+このファイルの寸法で作成している。
+
 ### `draft.svg`
 
 下書きのファイル
