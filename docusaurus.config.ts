@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Vivado in CLI',
   tagline: 'GUIからの解放',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/square.svg',
 
   // Set the production url of your site here
   url: 'https://my-xilinx-docs.pages.dev/',
@@ -66,12 +66,12 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/rectangle.svg',
     navbar: {
       title: 'Vivado in CLI',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/square.svg',
       },
       items: [
         {
