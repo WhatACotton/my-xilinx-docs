@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="288"
+   viewBox="0 0 512 288"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="vivado.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="1.4948823"
+     inkscape:cx="300.69257"
+     inkscape:cy="177.27148"
+     inkscape:window-width="1920"
+     inkscape:window-height="989"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="512"
+       height="288"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0"
+       id="rect1"
+       width="512"
+       height="288"
+       x="0"
+       y="0" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0"
+       id="rect2"
+       width="130"
+       height="130"
+       x="217.84271"
+       y="-144.19595"
+       transform="rotate(45)" />
+    <text
+       xml:space="preserve"
+       style="font-weight:600;font-size:40px;line-height:0;font-family:'Noto Serif CJK JP';-inkscape-font-specification:'Noto Serif CJK JP Semi-Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0"
+       x="400.18359"
+       y="277.60938"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         x="400.18359"
+         y="277.60938"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;font-family:Roboto;-inkscape-font-specification:'Roboto Bold';fill:#bea45d;fill-opacity:1">FPGA</tspan></text>
+    <rect
+       style="fill:#bea45d;stroke-width:0"
+       id="rect3"
+       width="75"
+       height="7"
+       x="218.49997"
+       y="182.96201" />
+    <rect
+       style="fill:#bea45d;stroke-width:0"
+       id="rect3-3"
+       width="50"
+       height="7"
+       x="31.179419"
+       y="277.82623"
+       transform="rotate(-45)" />
+    <rect
+       style="fill:#bea45d;stroke-width:0"
+       id="rect3-3-2"
+       width="50"
+       height="7"
+       x="234.82617"
+       y="-81.179489"
+       transform="rotate(45)" />
+  </g>
+</svg>

@@ -53,5 +53,5 @@ cd <path_to_block_design>
 vivado -mode batch -source ./bd/design_1.tcl
 ```
 
-なので一度 Block Design を作ってしまったあとはそのままそのプロジェクトを削除しても構いません。
+一度 Block Design を作ってしまったあとはそのままそのプロジェクトを削除しても構いません。
 :::

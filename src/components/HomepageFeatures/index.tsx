@@ -11,32 +11,30 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'バッチモードの使い方を解説',
+    Svg: require('@site/static/img/square.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Vivadoのバッチモードを使って、XilinxのFPGAをCLIから操作する方法を解説します。       
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'SSHでのリモート操作',
+    Svg: require('@site/static/img/square.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+       このドキュメントを読むことによって、VivadoをSSHでリモート操作する方法を学ぶことができます。RDPやVNCを使わずに、CLIからVivadoを操作する方法を解説しています。
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: '独自IPモジュールを用いたBlock Designの作成まで',
+    Svg: require('@site/static/img/square.svg').default,
+
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Vivadoのバッチモードを使って、独自IPモジュールを用いたBlock Designの作成までを解説します。
       </>
     ),
   },
