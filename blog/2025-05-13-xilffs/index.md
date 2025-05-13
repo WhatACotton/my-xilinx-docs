@@ -10,6 +10,8 @@ tags: []
 
 Vitis を xsct コマンドで使用する場合に、xilffs をビルドソースに含める方法を説明します。
 
+<!-- truncate -->
+
 ちなみに GUI からはすぐに設定できます。
 
 spr ファイルを選択し、modify BSP settings を選択します。
