@@ -67,7 +67,6 @@ const config: Config = {
         sitemap: {
           lastmod: "date",
           changefreq: "weekly",
-          priority: 0.5,
           ignorePatterns: ["/tags/**"],
           filename: "sitemap.xml",
           createSitemapItems: async (params) => {
