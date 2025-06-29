@@ -6,7 +6,7 @@ description: my-xilinx-docsのロゴを作成した話について書きます�
 tags: []
 ---
 
-## 挨拶
+## あいさつ
 
 こんにちは、Myxogastria0808 (Yuki Osada) です。
 
@@ -28,3 +28,22 @@ tags: []
 以下が、ロゴの設計図です。
 
 ![ロゴの設計図](draft.png)
+
+## 完成品
+
+長方形のロゴと正方形のロゴを作成しました。
+
+![長方形のロゴ](rectangle.svg)
+
+![正方形のロゴ](square.svg)
+
+![BATCHのロゴ](batch.svg)
+
+![SSHのロゴ](ssh.svg)
+
+![TUTORIALのロゴ](tut.svg)
+
+## おわりに
+
+作成したロゴは、my-xilinx-docsのアイデンティティを視覚的に表現できたと思います。
+my-xilinx-docが多くの方の目に留まり、読んでいただければ幸いです。
