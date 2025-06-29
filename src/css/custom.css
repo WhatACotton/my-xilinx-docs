@@ -11,7 +11,7 @@
 }
 
 /* ダークモード用の色 */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #25a0d5; /* 基本色 */
   --ifm-color-primary-dark: #2190c5; /* 暗い色 */
   --ifm-color-primary-darker: #1f80b5; /* さらに暗い色 */
