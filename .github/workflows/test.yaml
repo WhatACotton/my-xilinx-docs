@@ -1,0 +1,25 @@
+name: test
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install Nix
+      uses: cachix/install-nix-action@v31
+      with:
+        nix_path: nixpkgs=channel:nixpkgs-unstable
+    - name: Type Check
+      run: nix develop --command bash -c "npm i && npm run typecheck"
+    - name: Build Test
+      run: nix develop --command bash -c "npm i && npm run build"
